@@ -20,7 +20,7 @@ remote-windows*.json
 .codex-remote-attachments/
 .codex-source-*/
 .study/
-AGENTS.md
+AGENTS.local.md
 PROJECT_*_HANDOFF.md
 
 # Generated exports and deployment copies
