@@ -7,11 +7,16 @@ import {
   hostTimeZone,
   hubHome,
   instanceNames,
+  operatorName,
   projectRoot,
 } from "./config.mjs";
 
 const HOST_ROLE_VERSION = 3;
 const HOST_PERSONA_VERSION = 5;
+const HOST_PROFILE_FILES = Object.freeze({
+  zxc: "momo.md",
+  aiasio: "yuzu.md",
+});
 const HOST_TARGETS = new Set([
   "camera.scene",
   "service.status",
@@ -38,7 +43,7 @@ function clamp(value, minimum, maximum) {
 
 function profile(instance) {
   const shared = fs.readFileSync(path.join(projectRoot, "hosts", "shared.md"), "utf8");
-  const personal = fs.readFileSync(path.join(projectRoot, "hosts", `${instance}.md`), "utf8");
+  const personal = fs.readFileSync(path.join(projectRoot, "hosts", HOST_PROFILE_FILES[instance]), "utf8");
   return `${shared.trim()}\n\n${personal.trim()}`;
 }
 
@@ -219,7 +224,7 @@ export class HostDirector {
     const target = await this.ensureHost(targetInstance);
     const thread = await this.hub.readThread(targetInstance, target.threadId, false);
     const clean = this.#text(message, 1_200);
-    const body = `[Host contact ${instance} → ${targetInstance}]\n${clean}`;
+    const body = `[Host contact ${operatorName(instance)} → ${operatorName(targetInstance)}]\n${clean}`;
     const active = ACTIVE_STATUSES.has(statusType(thread));
     const delivered = active
       ? await this.hub.sendMessage({
@@ -303,7 +308,7 @@ export class HostDirector {
       ephemeral: false,
       model,
       reasoningEffort,
-      name: `Nacchan Host — ${instance}`,
+      name: `Nacchan Host — ${operatorName(instance)}`,
       developerInstructions: profile(instance),
     });
     const binding = this.store.setHost({

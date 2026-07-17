@@ -1,11 +1,11 @@
 ---
 name: nacchan-hub-navigation
-description: Understand and navigate Nacchan Control Club's instances, tasks, backend, filesystem locations, processes, coordination tools, and host automation. Use when inspecting or operating the local zxc/aiasio multi-account hub.
+description: Understand and navigate Nacchan Control Club's instances, tasks, backend, filesystem locations, processes, coordination tools, and host automation. Use when inspecting or operating the local Momo/Yuzu multi-account hub.
 ---
 
 # Nacchan Hub Navigation
 
-Treat Nacchan Control Club as a coordination layer joining two independent Codex account instances, `zxc` and `aiasio`. The hub is not a third model or account. The official Codex desktop app is the canonical user interface; the browser observer is a read-only presentation surface.
+Treat Nacchan Control Club as a coordination layer joining two independent Codex operators: **Momo** (internal key `zxc`) and **Yuzu** (internal key `aiasio`). Use Momo/Yuzu as names and the keys only in commands, tool arguments, protocol fields, and storage paths. The hub is not a third model or account. The official Codex desktop app is the canonical user interface; the browser observer is a read-only presentation surface.
 
 ## Locate the system
 
@@ -21,7 +21,7 @@ The supervisor proxies an active blue/green worker. Each account app-server conn
 
 ## Navigate tasks
 
-Use native task operations inside one Codex surface. Use the explicit `codex_multi_hub` tools across `zxc` and `aiasio`.
+Use native task operations inside one Codex surface. Use the explicit `codex_multi_hub` tools across Momo and Yuzu, passing their internal keys where the tool schema requires them.
 
 - Discover with `status`, `list_threads`, `read_thread`, `list_models`, `list_messages`, `list_events`, `list_hosts`, and `list_host_actions`.
 - Coordinate with `send_message`, `leave_note`, `followup_task`, `steer_thread`, `interrupt_thread`, `start_thread`, `fork_thread`, and `prepare_handoff`.

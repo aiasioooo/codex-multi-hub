@@ -5,7 +5,7 @@ description: Coordinate explicitly with the other local Codex account through th
 
 # Codex Multi Hub
 
-Use native Codex collaboration operations for agents inside the current instance. Use the explicit `codex_multi_hub` MCP tools only when coordinating across `zxc` and `aiasio` instances or recovering from an unavailable account.
+Use native Codex collaboration operations for agents inside the current instance. Use the explicit `codex_multi_hub` MCP tools only when coordinating across Momo (internal key `zxc`) and Yuzu (internal key `aiasio`) or recovering from an unavailable account. Refer to them as Momo and Yuzu in human-facing text; pass the internal keys to tool fields.
 
 ## Judgment
 
@@ -47,7 +47,7 @@ The official Codex desktop app is the user's canonical interactive surface. The 
 
 - The desktop app is not a third hub instance. It may show local tasks from its own `CODEX_HOME` and tasks reached through a remote connection. Confirm which instance owns a task before sending, steering, interrupting, or handing it off.
 - Hub-started and hub-steered turns are real Codex turns. When the corresponding instance is connected in the desktop app, use semantic task/thread operations so the work remains visible and reviewable there.
-- When native Codex task tools are exposed, use them to inspect, create, continue, message, steer, or hand off GUI-visible tasks. Use `codex_multi_hub` for `zxc` and `aiasio` cross-instance work.
+- When native Codex task tools are exposed, use them to inspect, create, continue, message, steer, or hand off GUI-visible tasks. Use `codex_multi_hub` for cross-instance work between Momo and Yuzu.
 - If no semantic operation reaches a requested GUI task, say so. Use a hub message or a concise workspace handoff as the fallback. Do not claim that shell access, filesystem access, or process inspection is equivalent to interacting with a GUI task.
 - Use computer or GUI automation only when the user explicitly requests a UI action and an appropriate tool is available. Preserve the user's active app and session.
 - Treat the desktop app, each account app-server, and the hub supervisor as separate processes. Hub maintenance must never stop, restart, kill, or relaunch the desktop app.

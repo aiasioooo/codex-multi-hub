@@ -107,7 +107,7 @@ async function callTool(name, sourceInstance, args) {
     "host_remember",
     "host_research",
   ].includes(name)) {
-    throw new Error(`Hub tool '${name}' may only be called by a bound zxc or aiasio Operator Host task`);
+    throw new Error(`Hub tool '${name}' may only be called by a bound Momo or Yuzu Operator Host task`);
   }
   if (sourceInstance === "gui" && name === "prepare_handoff") {
     throw new Error("A GUI task cannot be read as an operator source by prepare_handoff; send a concise followup_task summary or ask the owning operator to prepare the handoff");

@@ -82,7 +82,7 @@ switch ($action) {
     'restart' { Stop-Automation; Start-Automation }
     'status' { Show-Status }
     'wake' {
-        if ($args.Count -lt 2) { throw 'Usage: .\host-automation.ps1 wake zxc|aiasio [ambient|daily|weekly|manual]' }
+        if ($args.Count -lt 2) { throw 'Usage: .\host-automation.ps1 wake zxc|aiasio [ambient|daily|weekly|manual] (zxc/aiasio are internal keys)' }
         $instance = [string] $args[1]
         $kind = if ($args.Count -ge 3) { [string] $args[2] } else { 'manual' }
         & (Get-Command node -ErrorAction Stop | Select-Object -First 1).Source $script:ProgramPath --wake $instance $kind

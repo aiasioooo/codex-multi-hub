@@ -213,7 +213,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   if (wakeIndex !== -1) {
     const instance = process.argv[wakeIndex + 1];
     const kind = process.argv[wakeIndex + 2] || "manual";
-    if (!Object.hasOwn(HOSTS, instance)) throw new Error("Manual wake instance must be zxc or aiasio");
+    if (!Object.hasOwn(HOSTS, instance)) throw new Error("Manual wake instance must use internal key zxc or aiasio");
     if (!["ambient", "daily", "weekly", "manual"].includes(kind)) throw new Error("Manual wake kind must be ambient, daily, weekly, or manual");
     const state = loadState();
     const result = await wake(instance, kind, state);

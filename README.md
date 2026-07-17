@@ -1,11 +1,20 @@
-# Codex multi-account launcher
+# Nacchan Control Club
 
-This project runs multiple Codex accounts without sharing authentication state. Each account receives an independent `CODEX_HOME` under:
+This project runs two Codex operators without sharing authentication state:
+
+| Operator | Internal key | Theme |
+| --- | --- | --- |
+| **Momo** | `zxc` | Mint-side engineer |
+| **Yuzu** | `aiasio` | Violet-side strategist |
+
+Momo and Yuzu are the names shown in task titles, host profiles, and the observer UI. The short keys are deliberately retained only for commands, configuration, protocol fields, and storage compatibility.
+
+Each operator receives an independent `CODEX_HOME` under:
 
 ```text
 ~/.codex-accounts/
-├── zxc/
-└── aiasio/
+├── zxc/      # Momo
+└── aiasio/   # Yuzu
 ```
 
 Credentials stay outside this project. Do not copy `auth.json` between account homes: each account should complete its own login so refresh tokens remain independent.
@@ -22,11 +31,13 @@ The launcher provides an optional, reversible compatibility guard:
 .\codex-multi.ps1 gui-switch-protection disable
 ```
 
-When enabled, future Windows sessions point the GUI's best-effort revoke request at an unused loopback port. The GUI still removes its own local credentials, but the server-side refresh token is not revoked. Commands and app-servers launched through this project explicitly clear that override, so `zxc` and `aiasio` retain normal independent login/logout semantics.
+When enabled, future Windows sessions point the GUI's best-effort revoke request at an unused loopback port. The GUI still removes its own local credentials, but the server-side refresh token is not revoked. Commands and app-servers launched through this project explicitly clear that override, so Momo and Yuzu's internal instances retain normal independent login/logout semantics.
 
 This is an intentionally narrow workaround for account switching, not an official Codex setting. It takes effect after the next Windows sign-in or reboot. The tradeoff is security: logging out of the GUI no longer invalidates a refresh token that may exist elsewhere. Disable protection before a security-sensitive logout, or revoke sessions through the ChatGPT account security controls.
 
 ## Windows PowerShell
+
+Launcher commands use the stable internal keys shown in the table above.
 
 Initialize the two default account homes:
 
@@ -117,7 +128,7 @@ Intermediators are ordinary persistent, idle Codex tasks with durable developer 
 
 ### Operator hosts
 
-The observer also has two persistent recreational Operator Host tasks, one per account. They are separate from intermediators and never participate in critical routing. Both default to `gpt-5.6-sol` with low reasoning; their durable shared and individual identities live in `hosts/`.
+The observer also has two persistent recreational Operator Host tasks, Momo and Yuzu. They are separate from intermediators and never participate in critical routing. Both default to `gpt-5.6-sol` with low reasoning; their durable shared and individual identities live in `hosts/shared.md`, `hosts/momo.md`, and `hosts/yuzu.md`.
 
 `src/host-automation.mjs` is a separate low-overhead alarm clock. It reads private host-task bindings from environment variables or the ignored `.hub/host-bindings.json` file, checks that a target task is idle, and wakes that same persistent task with only this shape:
 
@@ -126,7 +137,7 @@ The observer also has two persistent recreational Operator Host tasks, one per a
 ambient · 2026-01-01 13:30 Local/Time_Zone
 ```
 
-There are no host sessions, turn/search leases, activation telemetry dumps, or repeated operational rules. The host's persistent developer instructions establish personality and authority once. After creation, one durable conversation prompt supplies its current task ID, peer ID, and automation controls. Stable hub and observer knowledge lives in the ID-free `nacchan-hub-navigation` and `nacchan-observer-stage` skills installed in both account homes.
+The wake suffix uses the internal key; the host's visible name remains Momo or Yuzu. There are no host sessions, turn/search leases, activation telemetry dumps, or repeated operational rules. The host's persistent developer instructions establish personality and authority once. After creation, one durable conversation prompt supplies its current task ID, peer ID, and automation controls. Stable hub and observer knowledge lives in the ID-free `nacchan-hub-navigation` and `nacchan-observer-stage` skills installed in both account homes.
 
 Copy `host-bindings.example.json` to `.hub/host-bindings.json` and replace the placeholders locally, or set `CODEX_HOST_ZXC_THREAD_ID` and `CODEX_HOST_AIASIO_THREAD_ID`. The schedule uses the machine's local time zone by default: a lightly randomized ambient wake every 3-5 hours, a daily wake at 20:30, and a weekly wake on Sunday at 20:00. Starts normally alternate between hosts, with a 5% chance for the same host to initiate consecutive ambient wakes. Fixed wakes retry while their time window remains open. Hosts may inspect, edit, reschedule, stop, restart, replace, or extend the program themselves.
 

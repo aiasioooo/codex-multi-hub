@@ -20,10 +20,19 @@ export const hostTimeZone = process.env.CODEX_HOST_TIME_ZONE
 
 export const instanceNames = ["zxc", "aiasio"];
 export const hubSourceNames = [...instanceNames, "gui"];
+export const operatorNames = Object.freeze({
+  zxc: "Momo",
+  aiasio: "Yuzu",
+});
+
+export function operatorName(instance) {
+  assertInstance(instance);
+  return operatorNames[instance];
+}
 
 export function assertInstance(value) {
   if (!instanceNames.includes(value)) {
-    throw new Error(`Unknown instance '${value}'. Expected zxc or aiasio.`);
+    throw new Error(`Unknown instance '${value}'. Expected internal key zxc or aiasio.`);
   }
   return value;
 }

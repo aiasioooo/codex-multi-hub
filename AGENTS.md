@@ -6,8 +6,8 @@ If `AGENTS.local.md` exists, read it after this file. It contains deployment-spe
 
 ## System model
 
-- The two internal instance IDs are `zxc` and `aiasio`. They have separate `CODEX_HOME` directories, authentication, app servers, tasks, and quota pools.
-- Their public observer aliases are **Momo** (`zxc`) and **Yuzu** (`aiasio`). Keep internal IDs stable in protocols, storage, CSS hooks, automation bindings, and tool arguments; use aliases for user-facing presentation.
+- The operator names are **Momo** and **Yuzu**. Never present their internal keys as character or operator names.
+- Their internal instance IDs are `zxc` (Momo) and `aiasio` (Yuzu). They have separate `CODEX_HOME` directories, authentication, app servers, tasks, and quota pools. Keep those keys stable in protocols, storage, CSS hooks, automation bindings, and tool arguments.
 - The hub is a coordinator, not another model or account. It discovers tasks, relays messages, starts or steers turns, supports handoffs, and exposes live state to an observer.
 - The official Codex app or CLI remains the canonical interactive surface. The browser observer is read-only.
 - A stable supervisor runs blue/green hub workers so source and static UI changes can reload without restarting either account app server or the Codex desktop app.

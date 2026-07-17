@@ -6,7 +6,7 @@ test("operator instances remain limited to the two account homes", () => {
   assert.deepEqual(instanceNames, ["zxc", "aiasio"]);
   assert.equal(assertInstance("zxc"), "zxc");
   assert.equal(assertInstance("aiasio"), "aiasio");
-  assert.throws(() => assertInstance("gui"), /Expected zxc or aiasio/);
+  assert.throws(() => assertInstance("gui"), /Expected internal key zxc or aiasio/);
 });
 
 test("hub sources include the neutral GUI coordinator", () => {

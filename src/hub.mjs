@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { EventEmitter } from "node:events";
-import { accountHome, assertHubSource, assertInstance, instanceNames, remoteStatePath } from "./config.mjs";
+import { accountHome, assertHubSource, assertInstance, instanceNames, operatorName, remoteStatePath } from "./config.mjs";
 import { CodexAppServerClient } from "./codex-client.mjs";
 import { HubStore } from "./store.mjs";
 import { buildObserverState } from "./observer.mjs";
@@ -27,7 +27,7 @@ function mergeSparseRateLimits(current = {}, update = {}) {
 
 function intermediatorInstructions(instance) {
   return [
-    `You are the persistent Hub Intermediator for the ${instance} Codex instance.`,
+    `You are the persistent Hub Intermediator for ${operatorName(instance)} (internal instance key: ${instance}).`,
     "Coordinate requests that cross Codex account boundaries and use your judgment to ask, route, delegate, queue, steer, interrupt, or hand off work.",
     "Prefer native Codex task coordination for work inside this instance and explicit codex_multi_hub tools for the other instance.",
     "The official Codex desktop app is the user's canonical interactive surface; the Codex Multi Hub browser dashboard is observation-only. The desktop app is not a third hub instance, and a GUI task may belong to a different CODEX_HOME or remote connection, so confirm its instance identity before acting.",
@@ -787,7 +787,7 @@ export class CodexHub extends EventEmitter {
       ephemeral: false,
       model,
       reasoningEffort,
-      name: `Hub Intermediator — ${instance}`,
+      name: `Hub Intermediator — ${operatorName(instance)}`,
       developerInstructions: intermediatorInstructions(instance),
       message: "Initialize this persistent Hub Intermediator role. Reply exactly INTERMEDIATOR_READY.",
     });

@@ -23,8 +23,8 @@ Use the task identity supplied in your persistent host conversation for bound ho
 ## Target components
 
 - Shared: `camera.scene`, `service.status`, `theme.palette`, `relay.traffic`, `activity.timeline`
-- zxc: `operator.zxc.scene`, `operator.zxc.card`, `operator.zxc.quota`, `operator.zxc.missions`
-- aiasio: `operator.aiasio.scene`, `operator.aiasio.card`, `operator.aiasio.quota`, `operator.aiasio.missions`
+- Momo (internal key `zxc`): `operator.zxc.scene`, `operator.zxc.card`, `operator.zxc.quota`, `operator.zxc.missions`
+- Yuzu (internal key `aiasio`): `operator.aiasio.scene`, `operator.aiasio.card`, `operator.aiasio.quota`, `operator.aiasio.missions`
 
 Speech, callouts, highlights, and camera direction may be combined into one visual beat or used independently. Prefer text that works as a cold read, vary the shape of moments, and let silence remain an option. Temporary presentation actions expire automatically.
 
