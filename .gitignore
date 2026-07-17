@@ -1,0 +1,48 @@
+# Credentials, account homes, sessions, databases, and process state
+.codex-accounts/
+.test-homes/
+.hub/
+.tmp-protocol/
+**/auth.json
+**/.credentials.json
+*.sqlite
+*.sqlite-*
+*-service.json
+*-state.json
+host-bindings.json
+public-password.txt
+remote-windows*.json
+*.log
+
+# Local Codex context, attachments, imported source, and design studies
+.agents/
+.codex/
+.codex-remote-attachments/
+.codex-source-*/
+.study/
+AGENTS.md
+PROJECT_*_HANDOFF.md
+
+# Generated exports and deployment copies
+codex-multi-ui-visual-*
+ui-demo/
+ui-demo-vercel/
+public/assets/*.png
+
+# Dependencies, build output, and editor/OS noise
+node_modules/
+coverage/
+dist/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local environment and private key material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx

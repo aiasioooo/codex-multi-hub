@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171830">
+  <title>Nacchan Control Club</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='16' fill='%23fff8e8' stroke='%23292844' stroke-width='5'/%3E%3Ctext x='30' y='44' font-size='30' font-weight='900' text-anchor='middle' fill='%23292844' font-family='sans-serif'%3EN%3C/text%3E%3Ctext x='50' y='20' font-size='16' fill='%23ff8eac'%3E%E2%99%A1%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/themes/vibrant.css">
+  <link rel="stylesheet" href="/themes/palettes.css">
+  <link rel="stylesheet" href="/cute.css?v=20260717-1">
+</head>
+<body data-mobile-view="overview" data-theme="anime" data-palette="original">
+  <div id="boot-splash" aria-hidden="true">
+    <div class="splash-badge"><b>N</b><i>✦</i></div>
+    <div class="splash-title">Nacchan Control Club</div>
+    <div class="splash-dots"><i></i><i></i><i></i></div>
+    <div class="splash-sub">warming up the relay…</div>
+  </div>
+  <div class="page-stars" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-badge"><b>N</b><i>✦</i></span>
+      <span><strong>Nacchan Control Club</strong><small>Codex relay station · 02 operators</small></span>
+    </a>
+    <div class="topbar-status">
+      <div class="theme-switcher" aria-label="Visual theme">
+        <button class="active" data-theme-choice="anime">Anime</button>
+        <button data-theme-choice="vibrant">Pop</button>
+      </div>
+      <div class="palette-picker">
+        <button class="palette-toggle" id="palette-toggle" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="Choose color palette" data-host-target="theme.palette">
+          <i aria-hidden="true"></i><span id="palette-label">Original</span><b aria-hidden="true">⌄</b>
+        </button>
+        <div class="palette-options" id="palette-options" role="menu" hidden>
+          <button type="button" role="menuitemradio" data-palette-choice="original"><i></i><span>Original</span></button>
+          <button type="button" role="menuitemradio" data-palette-choice="dark"><i></i><span>Midnight</span></button>
+          <button type="button" role="menuitemradio" data-palette-choice="light"><i></i><span>Daylight</span></button>
+          <button type="button" role="menuitemradio" data-palette-choice="sakura"><i></i><span>Sakura</span></button>
+          <button type="button" role="menuitemradio" data-palette-choice="ocean"><i></i><span>Ocean</span></button>
+        </div>
+      </div>
+      <span class="service-pill" id="service-pill" data-host-target="service.status"><i></i><span>Connecting</span></span>
+      <span class="last-sync" id="last-sync">—</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="club-hero mobile-overview">
+      <div class="hero-title">
+        <div><span class="kicker">LIVE FROM NACCHAN STATION</span><h1>Two minds,<br><em>one cute control room.</em></h1></div>
+        <p>Watch your Codex operators think, relay, and recover—while you stay in command from the official app.</p>
+      </div>
+
+      <div class="control-room scene-booting" data-camera="hub" data-host-target="camera.scene">
+        <div class="host-session-badge" id="host-session-badge" hidden><i></i><span>Hosts are live</span></div>
+        <img class="control-room-art control-room-art-wide" src="/assets/nacchan-control-room.webp" alt="Two original anime operators and their relay robot in Nacchan Control Club">
+        <img class="control-room-art control-room-art-focus" src="/assets/nacchan-control-room.webp" alt="" aria-hidden="true">
+        <img class="control-room-art scene-swap-art" id="scene-swap-art" alt="" aria-hidden="true">
+        <div class="scene-deck" aria-label="Control room artwork">
+          <button type="button" id="scene-prev" aria-label="Previous artwork">‹</button>
+          <span><i aria-hidden="true"></i><b id="scene-title">Classic</b><small id="scene-count">1 / 6</small></span>
+          <button type="button" id="scene-next" aria-label="Next artwork">›</button>
+        </div>
+        <div class="camera-dock" aria-label="Anime scene camera">
+          <span class="camera-label"><i aria-hidden="true"></i><b id="camera-label-text">Camera</b></span>
+          <button type="button" data-camera-choice="wide">Wide</button>
+          <button type="button" data-camera-choice="hub">Hub</button>
+        </div>
+        <div class="room-grid"></div><div class="room-glow"></div>
+        <article class="operator-card operator-zxc" id="scene-zxc" data-host-target="operator.zxc.scene">
+          <div class="operator-label"><span>OPERATOR 01</span><b>Momo</b><i>ENGINEER</i></div>
+          <svg class="operator-art" viewBox="0 0 280 300" role="img" aria-label="Original mint-haired anime operator Momo">
+            <defs><linearGradient id="zHair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8ffe4"/><stop offset="1" stop-color="#56d9b7"/></linearGradient><linearGradient id="zCoat"><stop stop-color="#ffbe6b"/><stop offset="1" stop-color="#ff7f83"/></linearGradient></defs>
+            <ellipse cx="141" cy="284" rx="102" ry="12" fill="#111329" opacity=".25"/>
+            <path d="M62 298c3-65 29-94 78-94s77 29 80 94" fill="url(#zCoat)" stroke="#292844" stroke-width="5"/>
+            <path d="M118 200v31c9 11 36 11 45 0v-31" fill="#ffd6bd" stroke="#292844" stroke-width="5"/>
+            <path d="M84 111c0-63 114-73 121 7l-8 81c-12 30-39 48-68 41-32-8-47-37-44-75z" fill="#ffd6bd" stroke="#292844" stroke-width="5"/>
+            <path d="M79 145c-14-73 36-116 87-104 43 10 53 42 45 87-19-9-38-30-46-51-13 28-45 51-86 55z" fill="url(#zHair)" stroke="#292844" stroke-width="5" stroke-linejoin="round"/>
+            <path d="M83 122c-18 17-18 62 5 83 2-33 10-55 24-72M204 119c20 13 19 59-6 82 2-31-3-53-15-70" fill="url(#zHair)" stroke="#292844" stroke-width="5"/>
+            <g class="eyes"><ellipse cx="119" cy="151" rx="12" ry="16" fill="#fff" stroke="#292844" stroke-width="4"/><ellipse cx="173" cy="151" rx="12" ry="16" fill="#fff" stroke="#292844" stroke-width="4"/><ellipse cx="122" cy="154" rx="6" ry="9" fill="#2f9d8e"/><ellipse cx="170" cy="154" rx="6" ry="9" fill="#2f9d8e"/><circle cx="124" cy="151" r="2" fill="#fff"/><circle cx="172" cy="151" r="2" fill="#fff"/></g>
+            <path d="M134 182c8 7 17 7 25 0" fill="none" stroke="#b95e70" stroke-width="4" stroke-linecap="round"/>
+            <path d="M94 131c8-7 19-9 30-5M166 126c11-3 21-1 29 6" fill="none" stroke="#292844" stroke-width="4" stroke-linecap="round"/>
+            <path d="M79 130c-19 4-21 50-4 56M209 129c20 6 20 47 4 55" fill="none" stroke="#635f84" stroke-width="9" stroke-linecap="round"/>
+            <path d="M213 180c-2 17-15 25-34 26" fill="none" stroke="#635f84" stroke-width="5" stroke-linecap="round"/><circle cx="177" cy="206" r="6" fill="#ff8ea8"/>
+            <path d="M112 229l28 22 26-22 22 69H92z" fill="#fff4dc" stroke="#292844" stroke-width="5"/><path d="M91 244l27 17-9 37H62c4-24 13-43 29-54zM188 244l-25 17 8 37h49c-4-24-15-44-32-54z" fill="url(#zCoat)" stroke="#292844" stroke-width="5"/>
+            <g class="status-spark"><path d="M52 76l5 11 11 5-11 5-5 11-5-11-11-5 11-5z" fill="#fff1a5" stroke="#292844" stroke-width="3"/></g>
+          </svg>
+          <div class="speech" id="scene-zxc-speech">I upgraded the quiet. You're welcome. <span>♡</span></div>
+          <div class="operator-state"><i></i><span id="scene-zxc-status">Checking signal…</span></div>
+        </article>
+
+        <div class="relay-stage">
+          <span class="relay-caption">RELAY CORE</span>
+          <div class="relay-rings"><i></i><i></i><i></i><div class="relay-face"><b>•ᴗ•</b><span>HUB</span></div></div>
+          <div class="message-route"><i class="route-left"></i><span id="scene-packets">0</span><i class="route-right"></i></div>
+          <p>Messages in orbit</p>
+        </div>
+
+        <article class="operator-card operator-aiasio" id="scene-aiasio" data-host-target="operator.aiasio.scene">
+          <div class="operator-label"><span>OPERATOR 02</span><b>Yuzu</b><i>STRATEGIST</i></div>
+          <svg class="operator-art" viewBox="0 0 280 300" role="img" aria-label="Original lavender-haired anime operator Yuzu">
+            <defs><linearGradient id="aHair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e1d8ff"/><stop offset="1" stop-color="#8e79df"/></linearGradient><linearGradient id="aCoat"><stop stop-color="#8186ff"/><stop offset="1" stop-color="#6653b8"/></linearGradient></defs>
+            <ellipse cx="141" cy="284" rx="102" ry="12" fill="#111329" opacity=".25"/>
+            <path d="M62 298c3-65 29-94 78-94s77 29 80 94" fill="url(#aCoat)" stroke="#292844" stroke-width="5"/>
+            <path d="M117 200v31c10 11 37 11 46 0v-31" fill="#f9d5c2" stroke="#292844" stroke-width="5"/>
+            <path d="M79 118c-1-78 117-96 129-5l4 119c-20 30-42 39-69 31-34 6-61-13-72-39z" fill="url(#aHair)" stroke="#292844" stroke-width="5"/>
+            <path d="M86 116c0-67 111-70 116 5l-8 77c-17 31-46 45-75 34-27-11-39-39-35-72z" fill="#f9d5c2" stroke="#292844" stroke-width="5"/>
+            <path d="M82 144c-13-68 32-108 83-101 40 6 55 39 47 83-25-10-44-26-55-47-14 25-39 45-75 53z" fill="url(#aHair)" stroke="#292844" stroke-width="5"/>
+            <path d="M76 132c-15 25-13 80 3 109 8-46 21-82 42-107M203 126c18 28 18 78 4 110-8-47-20-80-36-104" fill="url(#aHair)" stroke="#292844" stroke-width="5"/>
+            <g class="eyes"><ellipse cx="118" cy="153" rx="12" ry="16" fill="#fff" stroke="#292844" stroke-width="4"/><ellipse cx="171" cy="153" rx="12" ry="16" fill="#fff" stroke="#292844" stroke-width="4"/><ellipse cx="121" cy="156" rx="6" ry="9" fill="#7861c9"/><ellipse cx="168" cy="156" rx="6" ry="9" fill="#7861c9"/><circle cx="123" cy="153" r="2" fill="#fff"/><circle cx="170" cy="153" r="2" fill="#fff"/></g>
+            <path d="M136 184c7 4 15 4 22 0" fill="none" stroke="#b76583" stroke-width="4" stroke-linecap="round"/><path d="M95 132c8-6 18-8 29-4M163 128c11-3 21-1 28 5" fill="none" stroke="#292844" stroke-width="4" stroke-linecap="round"/>
+            <path d="M111 229l29 23 27-23 21 69H92z" fill="#f7f1ff" stroke="#292844" stroke-width="5"/><path d="M91 244l27 17-9 37H62c4-24 13-43 29-54zM188 244l-25 17 8 37h49c-4-24-15-44-32-54z" fill="url(#aCoat)" stroke="#292844" stroke-width="5"/>
+            <path d="M194 75l6 9 10 2-7 8 1 10-10-4-9 5 1-11-7-7 10-2z" fill="#fff1a5" stroke="#292844" stroke-width="3"/>
+          </svg>
+          <div class="speech" id="scene-aiasio-speech">Nothing is happening. I arranged it carefully. <span>✦</span></div>
+          <div class="operator-state"><i></i><span id="scene-aiasio-status">Checking signal…</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="health-grid mobile-overview" id="health-grid"><div class="skeleton-card"></div><div class="skeleton-card"></div></section>
+
+    <section class="tasks-section mobile-tasks">
+      <div class="section-heading"><div><p class="eyebrow">MISSION BOARD</p><h2>What everyone is working on</h2></div><label class="search"><span>⌕</span><input id="task-search" type="search" placeholder="Search missions" autocomplete="off"></label></div>
+      <div class="task-columns" id="task-columns"></div>
+    </section>
+
+    <section class="lower-grid mobile-activity">
+      <article class="panel activity-panel" data-host-target="activity.timeline">
+        <div class="club-chat-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="panel-heading"><div><p class="eyebrow">CLUB CHAT</p><h2>Relay messages</h2></div><div class="filters" id="activity-filters"><button class="active" data-filter="all">Everything</button><button data-filter="communication">Messages</button><button data-filter="system">System</button></div></div>
+        <div class="timeline" id="activity-list"></div>
+      </article>
+      <aside class="panel pulse-panel mobile-overview" data-host-target="relay.traffic">
+        <div class="mail-sticker">MAIL!</div><div class="panel-heading"><div><p class="eyebrow">RELAY MAILBOX</p><h2>Traffic report</h2></div></div>
+        <div class="traffic-stat"><strong id="traffic-total">0</strong><span>cross-account notes</span></div>
+        <div class="traffic-track"><i id="traffic-track"></i></div><div class="traffic-legend" id="traffic-legend"></div><div class="service-detail" id="service-detail"></div>
+      </aside>
+    </section>
+  </main>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <div class="host-overlay" id="host-overlay" aria-live="polite" aria-atomic="false"></div>
+  <aside class="inspector" id="inspector" aria-hidden="true"><header class="inspector-header"><div><p class="eyebrow" id="inspector-instance">MISSION FILE</p><h2 id="inspector-title">Task</h2></div><button class="icon-button" id="inspector-close" aria-label="Close">×</button></header><div class="inspector-body" id="inspector-body"></div></aside>
+  <nav class="mobile-nav"><button class="active" data-view="overview"><span>♡</span>Crew</button><button data-view="tasks"><span>☆</span>Missions</button><button data-view="activity"><span>✉</span>Relay</button></nav>
+  <script type="module" src="/app.js"></script>
+  <script type="module" src="/cute.js?v=20260717-1"></script>
+</body>
+</html>

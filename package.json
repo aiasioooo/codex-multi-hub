@@ -1,0 +1,17 @@
+{
+  "name": "codex-multi-hub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local coordination hub for two isolated Codex accounts",
+  "scripts": {
+    "start": "node src/supervisor.mjs",
+    "start:worker": "node src/server.mjs",
+    "hub-tool": "node src/hub-tool.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check src/supervisor.mjs && node --check src/server.mjs && node --check src/hub.mjs && node --check src/hosts.mjs && node --check src/host-automation.mjs && node --check src/observer.mjs && node --check src/mcp.mjs && node --check src/hub-tool.mjs && node --check public/app.js && node --check public/login.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.29.0"
+  }
+}

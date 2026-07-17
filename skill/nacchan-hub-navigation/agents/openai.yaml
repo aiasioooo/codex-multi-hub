@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nacchan Hub Navigation"
+  short_description: "Navigate the Nacchan multi-account hub"
+  default_prompt: "Use $nacchan-hub-navigation to inspect and operate the Nacchan hub."

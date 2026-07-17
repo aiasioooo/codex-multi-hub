@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nacchan Observer Stage"
+  short_description: "Compose the shared observer stage"
+  default_prompt: "Use $nacchan-observer-stage to compose a moment on the observer."
